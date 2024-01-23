@@ -2,15 +2,16 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Hotel extends Model
 {
     protected $fillable = [
-        'nom',
+        'name',
         'province',
         'ville',
+        'commune',
         'adresse',
         'boite_mail',
     ];

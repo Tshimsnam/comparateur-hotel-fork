@@ -1,7 +1,6 @@
 <?php
 
 namespace Database\Factories;
-
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +16,13 @@ class HotelFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => fake()->name(),
+            'province'=>fake()->state(),
+            'ville'=>fake()->city(),
+            'commune'=>fake()->citySuffix(),
+            'adresse'=>fake()->address(),
+            'boite_mail'=>fake()->unique()->safeEmail(),    
+            
         ];
     }
 }

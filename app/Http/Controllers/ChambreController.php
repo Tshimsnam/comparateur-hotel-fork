@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\chambre;
+use App\Models\Chambre;
 use App\Http\Requests\StorechambreRequest;
 use App\Http\Requests\UpdatechambreRequest;
 
@@ -35,7 +35,7 @@ class ChambreController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(chambre $chambre)
+    public function show(Chambre $chambre)
     {
         //
     }
@@ -43,7 +43,7 @@ class ChambreController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(chambre $chambre)
+    public function edit(Chambre $chambre)
     {
         //
     }
@@ -51,7 +51,7 @@ class ChambreController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatechambreRequest $request, chambre $chambre)
+    public function update(UpdatechambreRequest $request, Chambre $chambre)
     {
         //
     }
@@ -59,7 +59,7 @@ class ChambreController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(chambre $chambre)
+    public function destroy(Chambre $chambre)
     {
         //
     }

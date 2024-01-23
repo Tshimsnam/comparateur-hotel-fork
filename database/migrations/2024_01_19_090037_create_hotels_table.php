@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('hotels', function (Blueprint $table) {
             $table->id();
-            $table->string('nom');
+            $table->string('name');
             $table->string('province');
             $table->string('ville');
+            $table->string('commune');
             $table->string('adresse');
             $table->string('boite_mail');
             $table->timestamps();

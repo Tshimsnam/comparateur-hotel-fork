@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('categorie');
             $table->float('prix');
+            $table->string('path_img')->nullable;
             $table->boolean('is_active')->defaults(true);
             $table->unsignedBigInteger('hotel_id'); // Clé étrangère
             $table->foreign('hotel_id')->references('id')->on('hotels')->onDelete('cascade');

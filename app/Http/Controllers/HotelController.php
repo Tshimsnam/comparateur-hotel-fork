@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\hotel;
+use App\Models\Hotel;
 use App\Http\Requests\StorehotelRequest;
 use App\Http\Requests\UpdatehotelRequest;
 
@@ -35,7 +35,7 @@ class HotelController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(hotel $hotel)
+    public function show(Hotel $hotel)
     {
         //
     }
@@ -43,7 +43,7 @@ class HotelController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(hotel $hotel)
+    public function edit(Hotel $hotel)
     {
         //
     }
@@ -51,7 +51,7 @@ class HotelController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatehotelRequest $request, hotel $hotel)
+    public function update(UpdatehotelRequest $request, Hotel $hotel)
     {
         //
     }
@@ -59,7 +59,7 @@ class HotelController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(hotel $hotel)
+    public function destroy(Hotel $hotel)
     {
         //
     }
