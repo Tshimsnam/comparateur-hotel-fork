@@ -13,7 +13,7 @@ class ChambreController extends Controller
      */
     public function index()
     {
-        //
+        return view('chambres.index');
     }
 
     /**
