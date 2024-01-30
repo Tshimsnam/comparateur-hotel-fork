@@ -17,11 +17,6 @@ class HotelFactory extends Factory
     {
         return [
             'name' => fake()->name(),
-            'province'=>fake()->state(),
-            'ville'=>fake()->city(),
-            'commune'=>fake()->citySuffix(),
-            'adresse'=>fake()->address(),
-            'boite_mail'=>fake()->unique()->safeEmail(),    
             
         ];
     }
