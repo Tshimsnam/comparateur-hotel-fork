@@ -183,7 +183,7 @@
                   </figure>
                   <div class="p-3 text-center room-info">
                     <h2>{{$hotel->name}}</h2>
-                    <span class="text-uppercase letter-spacing-1">90$ / par jours</span>
+                    <span class="text-uppercase letter-spacing-1">{{$hotel->price}}$ / par jours</span>
                   </div>
                 </a>
               </div>

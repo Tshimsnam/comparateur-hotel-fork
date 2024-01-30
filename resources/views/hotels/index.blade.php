@@ -45,9 +45,9 @@
                                 <img src="storage/app/{{$hotel->path_img}}" alt="logo">
                             </td>
                             <td class="py-2 px-4 border-b border-gray-200 space-x-3">
-                                <a href="" class="bg-blue-500 p-2 rounded-sm shadow">
+                                {{-- <a href="" class="bg-blue-500 p-2 rounded-sm shadow">
                                     Voir
-                                </a>
+                                </a> --}}
                                 <a href="{{route('delete',$hotel->id)}}" class="bg-red-500 p-2 rounded-sm shadow">
                                     Supprimer
                                 </a>
