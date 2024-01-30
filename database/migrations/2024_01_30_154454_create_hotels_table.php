@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('ville');
             $table->string('commune');
             $table->string('adresse');
+            $table->string('path_img')->nullable;
+            $table->string('price');
             $table->string('boite_mail');
             $table->timestamps();
         });

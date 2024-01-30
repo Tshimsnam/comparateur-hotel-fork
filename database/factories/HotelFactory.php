@@ -1,10 +1,11 @@
 <?php
 
 namespace Database\Factories;
+
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\hotel>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Hotel>
  */
 class HotelFactory extends Factory
 {
@@ -16,13 +17,15 @@ class HotelFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->name(),
+            'name'=>fake()->name(),
             'province'=>fake()->state(),
             'ville'=>fake()->city(),
             'commune'=>fake()->citySuffix(),
             'adresse'=>fake()->address(),
-            'boite_mail'=>fake()->unique()->safeEmail(),    
-            
+            'path_img'=>fake()->imageUrl(640, 480),
+            'price'=>fake()->randomFloat(2,10,1000),
+            'boite_mail'=>fake()->unique()->safeEmail(),
+
         ];
     }
 }

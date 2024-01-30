@@ -21,6 +21,9 @@
     <link rel="stylesheet" href="{{asset('assets/fonts/ionicons/css/ionicons.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/fonts/fontawesome/css/font-awesome.min.css')}}">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+
     <!-- Theme Style -->
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
   </head>
@@ -64,7 +67,7 @@
     </header>
     <!-- END head -->
 
-    <section class="site-hero inner-page overlay" style="background-image: url(images/hero_4.jpg)" data-stellar-background-ratio="0.5">
+    <section class="site-hero inner-page overlay" style="background-image: url({{asset('assets/images/hero_4.jpg')}}" data-stellar-background-ratio="0.5">
       <div class="container">
         <div class="row site-hero-inner justify-content-center align-items-center">
           <div class="col-md-10 text-center" data-aos="fade">
@@ -158,7 +161,7 @@
               </div>
               <div class="row">
                 <div class="col-md-6 form-group">
-                  <input type="submit" value="Reserve Now" class="btn btn-primary text-white py-3 px-5 font-weight-bold">
+                    <input id="reservationButton" type="submit" value="Reserve Now" class="btn btn-primary text-white py-3 px-5 font-weight-bold">
                 </div>
               </div>
             </form>
@@ -259,16 +262,31 @@
       </div>
     </section>
 
-    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('reservationButton').addEventListener('click', function (event) {
+                event.preventDefault();
+                Swal.fire({
+                    title: 'Réservation effectuée avec succès',
+                    icon: 'success',
+                    confirmButtonText: 'Ok'
+                }).then(function () {
+                    window.location.href = "{{ route('hotels.index') }}";
+                });
+            });
+        });
+    </script>
+
     
     <section class="section bg-image overlay" style="background-image: url('images/hero_4.jpg');">
         <div class="container" >
-          <div class="row align-items-center">
+        <div class="row align-items-center">
             <div class="col-12 col-md-6 text-center mb-4 mb-md-0 text-md-left" data-aos="fade-up">
-              <h2 class="text-white font-weight-bold">A Best Place To Stay. Reserve Now!</h2>
+                <h2 class="text-white font-weight-bold">A Best Place To Stay. Reserve Now!</h2>
             </div>
             <div class="col-12 col-md-6 text-center text-md-right" data-aos="fade-up" data-aos-delay="200">
-              <a href="reservation.html" class="btn btn-outline-white-primary py-3 text-white px-5">Reserve Now</a>
+                <a href="" class="btn btn-outline-white-primary py-3 text-white px-5"
+                   data-toggle="modal" data-target="#reservationModal">Réserver maintenant</a>
             </div>
           </div>
         </div>
@@ -346,5 +364,7 @@
     
 
     <script src="{{asset('assets/js/main.js')}}"></script>
+
+    
 </body>
 </html>
