@@ -95,7 +95,7 @@
             <span class="d-block mb-4"><span class="display-4 text-primary">$199</span> <span class="text-uppercase letter-spacing-2">/ per night</span> </span>
             <h2 class="mb-4">Family Room</h2>
             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-            <p><a href="#" class="btn btn-primary text-white">Reservez</a></p>
+            <p><a href="{{route('pages.reservation')}}" class="btn btn-primary text-white">Reservez</a></p>
           </div>
         </div>
         {{-- <div class="site-block-half d-block d-lg-flex bg-white" data-aos="fade" data-aos-delay="200">
@@ -118,7 +118,7 @@
             <h2 class="text-white font-weight-bold">Pour une meilleur place, reservez maintenant!</h2>
           </div>
           <div class="col-12 col-md-6 text-center text-md-right" data-aos="fade-up" data-aos-delay="200">
-            <a href="reservation.html" class="btn btn-outline-white-primary py-3 text-white px-5">Reserve Now</a>
+            <a href="{{route('pages.reservation')}}" class="btn btn-outline-white-primary py-3 text-white px-5">Reserve Now</a>
           </div>
         </div>
       </div>
@@ -176,7 +176,7 @@
         </div>
       </div>
     </footer>
-    
+
     <script src="{{asset('assets/js/jquery-3.3.1.min.js')}}"></script>
     <script src="{{asset('assets/js/jquery-migrate-3.0.1.min.js')}}"></script>
     <script src="{{asset('assets/js/popper.min.js')}}"></script>

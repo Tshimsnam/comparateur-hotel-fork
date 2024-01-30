@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\ChambreController;
 use App\Http\Controllers\HotelController;
+use App\Http\Controllers\ReservationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,7 @@ Route::resource('/chambres',ChambreController::class);
 Route::resource('hotels',HotelController::class);
 Route::get('contact',[HotelController::class,'contact'])->name('contact');
 Route::get('about',[HotelController::class,'about'])->name('about');
+Route::resource('reservation', ReservationController::class);
 
 
 
