@@ -21,8 +21,11 @@ Route::get('/', function(){
     return redirect()->route('Accueil.index');
 });
 Route::resource('Accueil', MainController::class);
-Route::resource('/chambres',ChambreController::class);
+Route::resource('chambres',ChambreController::class);
 Route::resource('hotels',HotelController::class);
+Route::get('hotel.delete/{id}',[HotelController::class,'destroy'])->name('delete');
+Route::get('handleHotel',[HotelController::class,'showHotelAdmin'])->name('showHotelAdmin');
+
 Route::get('contact',[HotelController::class,'contact'])->name('contact');
 Route::get('about',[HotelController::class,'about'])->name('about');
 Route::resource('reservation', ReservationController::class);

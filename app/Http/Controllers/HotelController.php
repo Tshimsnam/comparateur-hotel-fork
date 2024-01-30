@@ -18,13 +18,21 @@ class HotelController extends Controller
         if (isset($request->filter)) {
             // dd($request->filter);
             $hotels = Hotel::where('commune', $request->filter)->get();
-            $status=true;
+            $status = true;
         } else {
             $hotels = Hotel::all();
-            $status=false;
+            $status = false;
         }
         // dd($hotels);
-        return view('pages.rooms', compact('hotels','status'));
+        return view('pages.rooms', compact('hotels', 'status'));
+    }
+    public function showHotelAdmin()
+    {
+        $hotels = Hotel::paginate(4);
+        $i = 1;
+
+        return view('hotels.index', compact('hotels', 'i'));
+
     }
 
     /**
@@ -40,9 +48,25 @@ class HotelController extends Controller
      */
     public function store(Request $request)
     {
-        // Hotel::create([
+        if ($request->hasFile('path_img')) {
+            $namefile = date('ymdhis') . '.' . $request->path_img->extension();
+            $path = $request->path_img->storeAs('images', $namefile);
 
-        // ])
+        }
+        // dd($path);
+        Hotel::create([
+            'name' => $request->name,
+            'path_img' => $path,
+            'price' => $request->price,
+            'commune' => $request->commune,
+            'adresse' => $request->boite_mail,
+            'boite_mail' => $request->boite_mail,
+
+        ]);
+        // info('');
+        return redirect()->back()->with("success","Création d'hôtel avec success");
+        
+        
     }
 
     /**
@@ -50,7 +74,7 @@ class HotelController extends Controller
      */
     public function show(Hotel $hotel)
     {
-        return view('pages.single',compact('hotel'));
+        return view('pages.single', compact('hotel'));
     }
 
     /**
@@ -69,18 +93,23 @@ class HotelController extends Controller
         //
     }
 
-    public function contact(){
+    public function contact()
+    {
         return view('pages.contact');
     }
-    public function about(){
+    public function about()
+    {
         return view('pages.about');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Hotel $hotel)
+    public function destroy( $id)
     {
-        //
+        // dd($id);
+        $hotel=Hotel::findOrFail($id);
+        $hotel->delete();
+        return redirect()->back()->with('success',"Suppression de l'hotel avec sucess");
     }
 }
