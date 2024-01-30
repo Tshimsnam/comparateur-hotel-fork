@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MainController;
+use App\Http\Controllers\ChambreController;
+use App\Http\Controllers\HotelController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +16,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
+Route::get('/', function(){
+    return redirect()->route('Accueil.index');
 });
+Route::resource('Accueil', MainController::class);
+Route::resource('/chambres',ChambreController::class);
+Route::resource('hotels',HotelController::class);
+Route::get('contact',[HotelController::class,'contact'])->name('contact');
+Route::get('about',[HotelController::class,'about'])->name('about');
 
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});

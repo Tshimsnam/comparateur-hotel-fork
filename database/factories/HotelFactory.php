@@ -1,0 +1,28 @@
+<?php
+
+namespace Database\Factories;
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\hotel>
+ */
+class HotelFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
+    public function definition(): array
+    {
+        return [
+            'name' => fake()->name(),
+            'province'=>fake()->state(),
+            'ville'=>fake()->city(),
+            'commune'=>fake()->citySuffix(),
+            'adresse'=>fake()->address(),
+            'boite_mail'=>fake()->unique()->safeEmail(),    
+            
+        ];
+    }
+}
