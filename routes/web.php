@@ -28,7 +28,9 @@ Route::get('handleHotel',[HotelController::class,'showHotelAdmin'])->name('showH
 
 Route::get('contact',[HotelController::class,'contact'])->name('contact');
 Route::get('about',[HotelController::class,'about'])->name('about');
-Route::resource('reservation', ReservationController::class);
+Route::get('/reservation', function () {
+    return view('pages.reservation');
+})->name('pages.reservation');
 
 
 

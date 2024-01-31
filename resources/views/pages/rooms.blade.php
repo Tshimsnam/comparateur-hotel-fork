@@ -183,7 +183,7 @@
               
               <div class="p-3 text-center room-info">
                 <h2>{{$hotel->name}}</h2>
-                <span class="text-uppercase letter-spacing-1">{{$hotel->proce}}$ / Par Jours</span> 
+                <span class="text-uppercase letter-spacing-1">{{$hotel->price}}$ / Par Jours</span> 
                 <p>
                   <span class="text-uppercase letter-spacing-1">Reserver</span>
                 </p>
